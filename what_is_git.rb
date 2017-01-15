@@ -1,3 +1,6 @@
+require 'jcode'
+$KCODE = 'u'
+
 class WhatIsGit
     def about(lang = 'en')
 	puts "http://#{lang}.wikipedia.org/wiki/Git"
@@ -15,6 +18,6 @@ class WhatIsGit
     private 
         def input(message)
             puts message
-            gets.chomp.downcase
+            gets.chomp.tr('A-Z a-z', 'A-Za-z').downcase
         end
 end
